@@ -22,7 +22,7 @@ var styles = {
     flexDirection: 'column'
   },
   sidebar: {
-    flex: '0 0 17em',
+    flex: '0 0 13rem',
     order: -1,
     display: 'flex',
     zIndex: 4

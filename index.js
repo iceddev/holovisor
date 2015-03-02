@@ -44,7 +44,7 @@ var Layout = React.createClass({
       <div style={styles.container}>
         <div ref="appbar" style={styles.appbar}></div>
         <div style={styles.main}>
-          <main ref="editor" style={styles.editor}>blah</main>
+          <main ref="editor" style={styles.editor}></main>
           <div ref="sidebar" style={styles.sidebar}></div>
         </div>
       </div>

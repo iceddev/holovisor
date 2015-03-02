@@ -1,6 +1,6 @@
 {
   "name": "holovisor",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Layout manager plugin for Irken",
   "main": "index.js",
   "scripts": {

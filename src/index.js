@@ -1,61 +1,14 @@
 'use strict';
 
-var React = require('react');
+const React = require('react');
 
-var styles = {
-  container: {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column'
-  },
-  appbar: {
-    height: '56px'
-  },
-  main: {
-    display: 'flex',
-    flex: 1
-  },
-  editor: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column'
-  },
-  sidebar: {
-    flex: '0 0 13rem',
-    order: -1,
-    display: 'flex',
-    zIndex: 4
-  }
-};
-
-var Layout = React.createClass({
-  componentDidMount: function(){
-    this.props.addMountpoint('appbar', this.refs.appbar.getDOMNode());
-    this.props.addMountpoint('sidebar', this.refs.sidebar.getDOMNode());
-    this.props.addMountpoint('editor', this.refs.editor.getDOMNode());
-  },
-  componentWillUnmount: function(){
-    this.props.removeMountpoint('sidebar');
-    this.props.removeMountpoint('main');
-  },
-  render: function(){
-    return (
-      <div style={styles.container}>
-        <div ref="appbar" style={styles.appbar}></div>
-        <div style={styles.main}>
-          <main ref="editor" style={styles.editor}></main>
-          <div ref="sidebar" style={styles.sidebar}></div>
-        </div>
-      </div>
-    );
-  }
-});
+const Layout = require('./layout');
 
 function holovisor(app, opts, cb){
-  var addMountpoint = app.addMountpoint.bind(app);
-  var removeMountpoint = app.removeMountpoint.bind(app);
-  var Component = (
+  const addMountpoint = app.addMountpoint.bind(app);
+  const removeMountpoint = app.removeMountpoint.bind(app);
+
+  const Component = (
     <Layout addMountpoint={addMountpoint} removeMountpoint={removeMountpoint} />
   );
 

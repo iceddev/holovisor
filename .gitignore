@@ -28,4 +28,6 @@ node_modules
 .lock-wscript
 
 # ignore the built files
-index.js
+/index.js
+/layout.js
+/styles.js

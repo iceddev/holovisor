@@ -1,12 +1,24 @@
 'use strict';
 
-var lab = exports.lab = require('lab').script();
-var code = require('code');
+var expect = require('expect');
 
-lab.experiment('holovisor', function(){
+var Irken = require('irken');
 
-  lab.test('renders layout', function(done){
-    // TODO: DOM testing?
+var holovisor = require('../');
+
+describe('holovisor', function(){
+
+  var app;
+
+  beforeEach(function(done){
+    app = new Irken();
     done();
+  });
+
+  it('renders layout', function(done){
+    app.register(holovisor, function(err){
+      expect(err).toNotExist();
+      done();
+    });
   });
 });

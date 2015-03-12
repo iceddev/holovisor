@@ -19,4 +19,4 @@ function holovisor(app, opts, cb){
   cb();
 }
 
-module.exports = holovisor
+module.exports = holovisor;

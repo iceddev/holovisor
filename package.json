@@ -4,8 +4,8 @@
   "description": "Layout manager plugin for Irken",
   "main": "index.js",
   "scripts": {
-    "test": "zuul test/ --local --open",
-    "ci": "zuul test/ --phantom",
+    "test": "zuul test/*.js --no-coverage --local --open",
+    "ci": "zuul test/*.js --phantom",
     "build": "gulp",
     "prepublish": "npm run build"
   },
@@ -33,14 +33,19 @@
     "irken": ">=0.1.0"
   },
   "devDependencies": {
-    "babel": "^4.6.5",
-    "expect": "^1.6.0",
+    "babel": "^4.7.8",
+    "babelify": "^5.0.4",
+    "expect": "git://github.com/phated/expect",
     "gulp": "git://github.com/gulpjs/gulp#4.0",
     "gulp-babel": "^4.0.0",
-    "irken": "^0.3.0",
+    "irken": "^0.4.1",
     "mocha": "^2.2.1",
     "phantomjs": "git://github.com/phated/phantomjs",
     "react": "^0.13.0",
     "zuul": "^2.1.1"
+  },
+  "dependencies": {
+    "envify": "^3.3.0",
+    "invariant": "^2.0.0"
   }
 }

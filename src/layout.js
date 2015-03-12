@@ -1,19 +1,25 @@
 'use strict';
 
 const React = require('react');
+const invariant = require('invariant');
 
 const styles = require('./styles');
 
 class Layout extends React.Component {
   componentDidMount(){
-    this.props.addMountpoint('appbar', React.findDOMNode(this._appbar));
-    this.props.addMountpoint('sidebar', React.findDOMNode(this._sidebar));
-    this.props.addMountpoint('editor', React.findDOMNode(this._editor));
+    const add = this.props.addMountpoint;
+    invariant(add, 'Layout requires addMountpoint during componentDidMount.');
+    add('appbar', React.findDOMNode(this._appbar));
+    add('sidebar', React.findDOMNode(this._sidebar));
+    add('editor', React.findDOMNode(this._editor));
   }
 
   componentWillUnmount(){
-    this.props.removeMountpoint('sidebar');
-    this.props.removeMountpoint('main');
+    const remove = this.props.removeMountpoint;
+    invariant(remove, 'Layout requires removeMountpoint during componentWillUnmount.');
+    remove('appbar');
+    remove('sidebar');
+    remove('editor');
   }
 
   render(){
@@ -28,5 +34,10 @@ class Layout extends React.Component {
     );
   }
 }
+
+Layout.propTypes = {
+  addMountpoint: React.PropTypes.func.isRequired,
+  removeMountpoint: React.PropTypes.func.isRequired
+};
 
 module.exports = Layout;

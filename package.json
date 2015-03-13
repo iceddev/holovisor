@@ -11,6 +11,8 @@
   },
   "files": [
     "index.js",
+    "layout.js",
+    "styles.js",
     "LICENSE"
   ],
   "repository": {

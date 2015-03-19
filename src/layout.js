@@ -12,6 +12,7 @@ class Layout extends React.Component {
     add('appbar', React.findDOMNode(this._appbar));
     add('sidebar', React.findDOMNode(this._sidebar));
     add('editor', React.findDOMNode(this._editor));
+    add('overlay', React.findDOMNode(this._overlay));
   }
 
   componentWillUnmount(){
@@ -20,6 +21,7 @@ class Layout extends React.Component {
     remove('appbar');
     remove('sidebar');
     remove('editor');
+    remove('overlay');
   }
 
   render(){
@@ -30,6 +32,7 @@ class Layout extends React.Component {
           <main ref={(ref) => this._editor = ref} style={styles.editor}></main>
           <div ref={(ref) => this._sidebar = ref} style={styles.sidebar}></div>
         </div>
+        <div ref={(ref) => this._overlay = ref} style={styles.overlay}></div>
       </div>
     );
   }

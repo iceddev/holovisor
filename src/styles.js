@@ -24,6 +24,12 @@ const styles = {
     order: -1,
     display: 'flex',
     zIndex: 4
+  },
+  overlay: {
+    position: 'fixed',
+    width: 0,
+    height: 0,
+    zIndex: 9999
   }
 };
 

@@ -3,11 +3,9 @@
 const expect = require('expect');
 
 const React = require('react/addons');
-const TestUtils = React.addons.TestUtils;
 const Irken = require('irken');
 
 const holovisor = require('../src');
-const Layout = require('../src/layout');
 
 describe('holovisor', function(){
 
@@ -41,8 +39,8 @@ describe('holovisor', function(){
         addSpy.restore();
         removeSpy.restore();
         expect(renderErr).toNotExist();
-        expect(addSpy.calls.length).toEqual(3);
-        expect(removeSpy.calls.length).toEqual(3);
+        expect(addSpy.calls.length).toEqual(4);
+        expect(removeSpy.calls.length).toEqual(4);
         done();
       });
     });

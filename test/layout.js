@@ -8,7 +8,7 @@ const Layout = require('../src/layout');
 
 function noop(){}
 
-const mountpoints = ['appbar', 'editor', 'sidebar'];
+const mountpoints = ['appbar', 'editor', 'sidebar', 'overlay'];
 
 describe('Layout', function(){
 
@@ -68,7 +68,7 @@ describe('Layout', function(){
     const spy = expect.createSpy(addMountpoint).andCallThrough();
 
     React.render(<Layout addMountpoint={spy} removeMountpoint={noop} />, container);
-    expect(spy.calls.length).toEqual(3);
+    expect(spy.calls.length).toEqual(4);
     done();
   });
 
@@ -82,7 +82,7 @@ describe('Layout', function(){
 
     React.render(<Layout removeMountpoint={spy} addMountpoint={noop} />, container);
     React.unmountComponentAtNode(container);
-    expect(spy.calls.length).toEqual(3);
+    expect(spy.calls.length).toEqual(4);
     done();
   });
 });
